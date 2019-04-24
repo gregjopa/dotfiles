@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/projects"
+alias g="git"
+
+# Easier navigation: .., ..., ...., -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias -- -="cd -"
+
+# File size
+alias fs="stat -f '%z bytes'"
+alias df="df -h"
+
+# Set terminal colors for osx
+export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
+
+# List all files colorized in long format
+alias l="ls -lF -G"
+
+# List all files colorized in long format, excluding . and ..
+alias la="ls -lAF -G"
+
+# List only directories
+alias lsd="ls -lF -G | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls -G"
+
+# Google Chrome
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
