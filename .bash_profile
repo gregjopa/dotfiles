@@ -12,5 +12,9 @@ if [ -f "$HOME"/.bash_prompt ]; then
   . "$HOME"/.bash_prompt
 fi
 
+# Add color to osx terminal
+export CLICOLOR=1
+export LSCOLORS=GxExBxBxFxegedabagacad
+
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"

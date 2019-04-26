@@ -16,9 +16,6 @@ alias -- -="cd -"
 alias fs="stat -f '%z bytes'"
 alias df="df -h"
 
-# Set terminal colors for osx
-export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
-
 # List all files colorized in long format
 alias l="ls -lF -G"
 
