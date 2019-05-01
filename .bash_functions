@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Create a new directory and enter it
+function mkd {
+  mkdir -p "$@" && cd "$_" || return 1;
+}
+
 # Change working directory to project root
 function pr {
   local dir="$PWD"
