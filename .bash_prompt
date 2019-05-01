@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+if [ -f "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh" ]; then
+  . "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
+fi
 
-export PS1="\W\$(parse_git_branch) $ "
+export GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='\W$(__git_ps1 " (%s)") $ '
