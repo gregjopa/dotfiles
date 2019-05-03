@@ -14,6 +14,9 @@ brew upgrade
 # Save homebrew’s install location
 BREW_PREFIX=$(brew --prefix)
 
+# Install GNU core utilities
+brew install coreutils
+
 # Install latest bash
 brew install bash
 brew install bash-completion2

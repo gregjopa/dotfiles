@@ -29,5 +29,11 @@ fi;
 export CLICOLOR=1
 export LSCOLORS=GxExBxBxFxegedabagacad
 
-# elixir
+# Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Use normal command names with coreutils
+# https://github.com/Homebrew/homebrew-core/blob/master/Formula/coreutils.rb
+if [ -d "$(brew --prefix coreutils)/libexec/gnubin/" ]; then
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
