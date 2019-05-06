@@ -43,3 +43,38 @@ function http_compression {
   curl -H "$accept_encoding" -w 'Size (compressed) =   %{size_download}\n' -o /dev/null -s "$1"
   curl -I -H "$accept_encoding" -s "$1" | grep -i "content-encoding"
 }
+
+# Pull down and log changes, optionally specifying the branch
+function pull {
+  local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
+
+  if [ -d ./.git ]; then
+    echo "git pull origin $branch"
+    git pull origin "$branch"
+
+    if [ "$(git rev-list --count ORIG_HEAD..HEAD)" -gt 0 ]; then
+      echo "git log ORIG_HEAD..HEAD"
+      git log ORIG_HEAD..HEAD --oneline
+    fi
+  else
+    echo "Not a git directory"
+  fi
+}
+
+# Push up changes, optionally specifying the branch or `f` for force pushing
+function push {
+  local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
+
+  if [[ -d ./.git ]]; then
+    if [[ "$1" == "f" ]]; then
+        branch=$(git rev-parse --abbrev-ref HEAD)
+        echo "git push origin ${branch}:${branch} --force-with-lease"
+        git push origin "${branch}:${branch}" --force-with-lease
+    else
+      echo "git push origin ${branch}:${branch}"
+      git push origin "${branch}:${branch}"
+    fi
+  else
+    echo "Not a git directory"
+  fi
+}
