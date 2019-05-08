@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if ! command -v brew > /dev/null 2>&1; then
+if ! command -v brew &> /dev/null; then
   echo "Installing Homebrew ..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
@@ -23,6 +23,7 @@ brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
 if ! grep -F -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
+  echo "Configuring shell to use brew-installed bash"
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
