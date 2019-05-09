@@ -39,3 +39,6 @@ export LSCOLORS=GxExBxBxFxegedabagacad
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/.exenv/bin:$PATH"
 eval "$(exenv init -)"
+
+# Remove duplicates from PATH
+export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
