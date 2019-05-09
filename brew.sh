@@ -31,5 +31,9 @@ fi;
 # Dev tools
 brew install git
 
+# Install elixir
+brew install elixir-build
+brew install exenv
+
 # Remove outdated versions from the cellar
 brew cleanup

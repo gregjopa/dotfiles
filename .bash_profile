@@ -37,3 +37,5 @@ export LSCOLORS=GxExBxBxFxegedabagacad
 
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
+export PATH="$HOME/.exenv/bin:$PATH"
+eval "$(exenv init -)"
