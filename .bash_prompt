@@ -5,4 +5,8 @@ if [ -f "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh" ]; then
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\W$(__git_ps1 " (%s)") $ '
+export GIT_PS1_SHOWCOLORHINTS=true
+
+# Bash prompt: "folder_name (branch_name git_status_indicator) $"
+# Ex: my_blog (master *) $
+export PROMPT_COMMAND='__git_ps1 "\W" " $ "'
