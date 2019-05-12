@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 
+# Save homebrew’s install location
+BREW_PREFIX=$(brew --prefix)
+
 # Use normal command names with coreutils
-# https://github.com/Homebrew/homebrew-core/blob/master/Formula/coreutils.rb
-if [ -d "$(brew --prefix)/opt/coreutils/libexec/gnubin/" ]; then
-  export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+if [ -d "$BREW_PREFIX"/opt/coreutils/libexec/gnubin/ ]; then
+  export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+fi
+
+# Add tab completion for many bash commands
+if [ -f "$BREW_PREFIX"/etc/profile.d/bash_completion.sh ]; then
+  . "$BREW_PREFIX"/etc/profile.d/bash_completion.sh
+fi
+
+# Add tab completion for git commands
+if [ -f "$BREW_PREFIX"/etc/bash_completion.d/git-completion.bash ]; then
+  . "$BREW_PREFIX"/etc/bash_completion.d/git-completion.bash
 fi
 
 if [ -f "$HOME"/.aliases ]; then
@@ -16,14 +28,6 @@ fi
 
 if [ -f "$HOME"/.bash_prompt ]; then
   . "$HOME"/.bash_prompt
-fi
-
-if [ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
-  . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
-fi
-
-if [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ]; then
-  . "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
 fi
 
 # Enable tab completion for `g` by marking it as an alias for `git`
