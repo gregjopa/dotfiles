@@ -32,8 +32,9 @@ fi;
 brew install git
 
 # Install elixir
-brew install elixir-build
 brew install exenv
+brew install elixir-build
+brew install erlang
 
 # Remove outdated versions from the cellar
 brew cleanup
