@@ -40,6 +40,9 @@
 [fetch]
   prune = true
 
+[rerere]
+  enabled = true
+
 [core]
   editor = code --wait
   excludesfile = ~/.gitignore
