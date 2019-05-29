@@ -28,20 +28,33 @@ function server {
 
 # Show the response headers for a given url
 function http_headers {
-  curl -I -L "$@"
+  if [ -n "$1" ]; then
+    curl "$1" -I -L
+  else
+    echo "Usage: http_headers <url>"
+  fi
 }
 
 # Show the timing details for a given url
 function http_debug {
-  curl "$@" -o /dev/null -s -w "dns_resolution: %{time_namelookup}, tcp_established: %{time_connect}, ssl_handshake_done: %{time_appconnect}, TTFB: %{time_starttransfer}\n"
+  if [ -n "$1" ]; then
+    local format="dns_resolution: %{time_namelookup}, tcp_established: %{time_connect}, ssl_handshake_done: %{time_appconnect}, TTFB: %{time_starttransfer}\n"
+    curl "$1" -o /dev/null -s -w "$format"
+  else
+    echo "Usage: http_debug <url>"
+  fi
 }
 
 # Check the compression for a given url
 function http_compression {
-  local accept_encoding="accept-encoding: gzip, deflate, br"
-  curl -w 'Size (uncompressed) = %{size_download}\n' -o /dev/null -s "$1"
-  curl -H "$accept_encoding" -w 'Size (compressed) =   %{size_download}\n' -o /dev/null -s "$1"
-  curl -I -H "$accept_encoding" -s "$1" | grep -i "content-encoding"
+  if [ -n "$1" ]; then
+    local accept_encoding="accept-encoding: gzip, deflate, br"
+    curl "$1" -o /dev/null -s -w "Size (uncompressed) = %{size_download}\n"
+    curl "$1" -o /dev/null -s -H "$accept_encoding" -w "Size (compressed) =   %{size_download}\n"
+    curl "$1" -s -I -H "$accept_encoding" | grep -i "content-encoding"
+  else
+    echo "Usage: http_compression <url>"
+  fi
 }
 
 # Pull down and log changes, optionally specifying the branch
