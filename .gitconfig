@@ -44,6 +44,7 @@
   enabled = true
 
 [core]
+  autocrlf = input
   editor = code --wait
   excludesfile = ~/.gitignore
 
