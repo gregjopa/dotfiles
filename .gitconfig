@@ -6,11 +6,19 @@
   user = gregjopa
 
 [alias]
-  st = status -sb
-  ci = commit
+  a = add
+  aa = add -A
+  ap = add -p
+  c = commit
+  ca = !git add -A && git commit
   co = checkout
-  br = branch
+  cob = checkout -b
+  l = log --abbrev-commit --date=relative
+  lf = !git l --pretty=full
   lg = log -p
+  s = status
+  st = status -sb
+  unstage = reset HEAD
 
 [color]
   ui = true
@@ -30,6 +38,9 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[format]
+  pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 
 [push]
   default = current
