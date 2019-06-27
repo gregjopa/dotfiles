@@ -1,0 +1,38 @@
+-- Disable logging while loading this psqlrc file
+\set QUIET yes
+
+
+-- Make null values visible
+\pset null '(null)'
+
+-- Use expanded mode when query output is wider than the screen
+\x auto
+
+-- Display how long each sql statement takes
+\timing
+
+-- Prevent duplicates in history
+\set HISTCONTROL ignoredups
+
+-- Maintain a separate history file for each database
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- Custom prompt
+\set PROMPT1 '\n%[%033[1;31m%]➤ %[%033[2;37m%]%`\! date "+%F %I:%M %p %Z"`%[%033[0m%] %[%033[1;36m%]%n%[%033[34m%]@%[%033[1;36m%]%M:%>%[%033[1;33m%]/%/ %[%033[1;31m%]%x %[%033[K%]%[%033[0m%]\n%[%033[1;33m%]%R%#%[%033[0m%] '
+\set PROMPT2 '%[%033[1;33m%]%R%#%[%033[0m%] '
+
+-- alias for querying database sizes
+\set dbsize 'select datname db_name, pg_size_pretty(pg_database_size(datname)) db_size from pg_database order by pg_database_size(datname) desc;'
+
+\set uptime 'select date_trunc(\'second\', current_timestamp - pg_postmaster_start_time()) as uptime;'
+
+
+-- Reset logging back to normal
+\unset QUIET
+
+
+\echo '------------------------------'
+\echo 'Custom queries:'
+\echo '\t' ':dbsize'
+\echo '\t' ':uptime'
+\echo '------------------------------\n'
