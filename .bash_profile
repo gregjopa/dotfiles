@@ -30,6 +30,11 @@ if [ -f "$HOME"/.bash_prompt ]; then
   . "$HOME"/.bash_prompt
 fi
 
+# Load private secrets
+if [ -f "$HOME"/.secrets ]; then
+    . "$HOME"/.secrets
+fi
+
 # Enable tab completion for `g` by marking it as an alias for `git`
 if type _git &> /dev/null; then
   complete -o default -o nospace -F _git g;
