@@ -48,3 +48,6 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # git alias for dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# Reload shell as a login shell
+alias reload="exec $SHELL -l"
