@@ -22,6 +22,7 @@ function pr {
 # Start an HTTP server from a directory, optionally specifying the port
 function server {
   local port="${1:-8000}"
+  echo "python -m SimpleHTTPServer $port"
   sleep 1 && open "http://localhost:${port}/" &
   python -m SimpleHTTPServer "$port"
 }
