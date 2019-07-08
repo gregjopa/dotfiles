@@ -58,6 +58,15 @@ function http_compression {
   fi
 }
 
+# Checkout master
+function master {
+  if [ -d ./.git ]; then
+    git checkout master
+  else
+    echo "Not a git directory"
+  fi
+}
+
 # Pull down and log changes, optionally specifying the branch
 function pull {
   local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
