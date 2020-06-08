@@ -28,19 +28,6 @@ BREW_PREFIX=$(brew --prefix)
 
 brew install zsh
 
-# Install starship theme
-brew tap homebrew/cask-fonts
-brew cask install font-fira-code
-brew install starship
-
-# Install elixir
-brew install exenv
-brew install elixir-build
-brew install erlang
-
-brew install bat
-brew install exa
-
 # Switch to using brew-installed zsh as default shell
 if ! grep -F -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
   echo "Configuring shell to use brew-installed zsh"
@@ -54,3 +41,23 @@ else
   echo "Installing Oh-My-Zsh"
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+
+if command -v volta &> /dev/null; then
+  echo "Volta is already installed"
+else
+  echo "Installing Volta"
+  /bin/bash -c "$(curl -fsSL https://get.volta.sh)"
+fi
+
+# Install starship theme
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
+brew install starship
+
+# Install elixir
+brew install exenv
+brew install elixir-build
+brew install erlang
+
+brew install bat
+brew install exa
