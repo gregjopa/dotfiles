@@ -18,10 +18,6 @@ if [ -f "$HOME"/.functions ]; then
   . "$HOME"/.functions
 fi
 
-# Add color to macOS terminal
-export CLICOLOR=1
-export LSCOLORS=GxExBxBxFxegedabagacad
-
 # Elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/.exenv/bin:$PATH"
