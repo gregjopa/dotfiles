@@ -22,6 +22,22 @@ config commit -m 'Add gitconfig'
 config push
 ```
 
+## Screenshot
+
+<img src="./editor_screenshot.png" width="800">
+
+| Category | Details |
+| --- | --- |
+| Editor | [Visual Studio Code](https://code.visualstudio.com/) |
+| Terminal | [oh-my-zsh](https://ohmyz.sh/) |
+| Terminal Theme | [Starship](https://starship.rs/) |
+| Font Family | [Fira Code](https://github.com/tonsky/FiraCode) |
+| Color Theme | [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) - Darker High Contrast |
+| File Icon Theme | [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - Darker |
+
+Note that the config for Visual Studio Code is not managed by this dotfiles repo.
+
+
 ## Notes from Inital Setup
 
 ```sh
