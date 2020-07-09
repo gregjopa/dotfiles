@@ -8,4 +8,5 @@ volta install \
   fkill-cli \
   npm-check-updates \
   speed-test \
-  tldr
+  tldr \
+  gatsby-cli
