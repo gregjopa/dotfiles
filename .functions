@@ -67,6 +67,15 @@ function master {
   fi
 }
 
+# Checkout main
+function main {
+  if [ -d ./.git ]; then
+    git checkout main
+  else
+    echo "Not a git directory"
+  fi
+}
+
 # Pull down and log changes, optionally specifying the branch
 function pull {
   local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"

@@ -18,6 +18,7 @@
   lg = log -p
   s = status
   st = status -sb
+  undo = reset --soft HEAD~1
   unstage = reset HEAD
   delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
