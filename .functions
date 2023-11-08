@@ -76,6 +76,23 @@ function main {
   fi
 }
 
+# Checkout develop
+function develop {
+  if [ -d ./.git ]; then
+    git checkout develop
+  else
+    echo "Not a git directory"
+  fi
+}
+
+function squash {
+  if [ -n "$1" ]; then
+    git reset --soft HEAD~$1 && git commit
+  else
+    echo "Usage: squash <number of commits>"
+  fi
+}
+
 # Pull down and log changes, optionally specifying the branch
 function pull {
   local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
