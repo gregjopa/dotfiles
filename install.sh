@@ -51,7 +51,7 @@ fi
 
 # Install starship theme
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code
 brew install starship
 
 # Install elixir
