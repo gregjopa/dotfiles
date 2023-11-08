@@ -15,8 +15,8 @@ alias path='echo -e ${PATH//:/\\n}'
 # git alias for dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-# Reload shell as a login shell
-alias reload=". $HOME/.zshrc"
+# Reload shell
+alias reload="exec zsh"
 
 # Command Line Tools
 alias cat="bat"
