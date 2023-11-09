@@ -62,4 +62,4 @@ brew install elixir-build
 brew install erlang
 
 brew install bat
-brew install exa
+brew install eza

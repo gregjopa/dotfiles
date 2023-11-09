@@ -20,4 +20,4 @@ alias reload="exec zsh"
 
 # Command Line Tools
 alias cat="bat"
-alias ls="exa"
+alias ls="eza"
