@@ -27,3 +27,6 @@ export PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV
 
 # starship theme - https://starship.rs/
 eval "$(starship init zsh)"
+
+# smarter cd command - https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"

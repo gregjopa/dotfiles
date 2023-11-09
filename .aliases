@@ -18,6 +18,6 @@ alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Reload shell
 alias reload="exec zsh"
 
-# Command Line Tools
+# Command line tools
 alias cat="bat"
 alias ls="eza"
