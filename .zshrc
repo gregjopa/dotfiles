@@ -18,11 +18,6 @@ if [ -f "$HOME"/.functions ]; then
   . "$HOME"/.functions
 fi
 
-# Elixir
-export ERL_AFLAGS="-kernel shell_history enabled"
-export PATH="$HOME/.exenv/bin:$PATH"
-eval "$(exenv init -)"
-
 # Node
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"

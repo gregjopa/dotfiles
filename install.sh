@@ -56,10 +56,6 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 brew install starship
 
-# Install elixir
-brew install exenv
-brew install elixir-build
-brew install erlang
-
+# misc
 brew install bat
 brew install eza
