@@ -31,7 +31,7 @@ config push
 | Editor | [Visual Studio Code](https://code.visualstudio.com/) |
 | Terminal | [oh-my-zsh](https://ohmyz.sh/) |
 | Terminal Theme | [Starship](https://starship.rs/) |
-| Font Family | [Fira Code](https://github.com/tonsky/FiraCode) |
+| Font Family | [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts) |
 | Color Theme | [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) - Darker High Contrast |
 | File Icon Theme | [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - Darker |
 
