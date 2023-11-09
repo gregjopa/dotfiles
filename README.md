@@ -32,7 +32,7 @@ config push
 | Terminal | [oh-my-zsh](https://ohmyz.sh/) |
 | Terminal Theme | [Starship](https://starship.rs/) |
 | Font Family | [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts) |
-| Color Theme | [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme) - Darker High Contrast |
+| Color Theme | Solarized Dark (built-in) |
 | File Icon Theme | [Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) - Darker |
 
 Note that the config for Visual Studio Code is not managed by this dotfiles repo.
